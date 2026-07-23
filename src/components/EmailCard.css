@@ -1,0 +1,95 @@
+/* EmailCard Styles */
+.email-card {
+  display: grid;
+  grid-template-columns: 100px 1.5fr 2fr 110px 100px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  border: 1px solid rgba(212, 175, 55, 0.15);
+  border-radius: var(--radius);
+  cursor: pointer;
+  transition: all 0.25s ease;
+  backdrop-filter: blur(8px);
+}
+
+.email-card:hover {
+  border-color: var(--gold);
+  box-shadow: var(--gold-glow);
+  transform: translateY(-2px);
+  background: rgba(25, 25, 25, 0.9);
+}
+
+.email-card__badge {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+}
+
+.email-card__badge--spam {
+  color: var(--spam-red);
+  background: rgba(255, 68, 68, 0.15);
+  border: 1px solid rgba(255, 68, 68, 0.4);
+  box-shadow: 0 0 10px rgba(255, 68, 68, 0.2);
+}
+
+.email-card__badge--ham {
+  color: var(--ham-green);
+  background: rgba(0, 230, 118, 0.15);
+  border: 1px solid rgba(0, 230, 118, 0.4);
+  box-shadow: 0 0 10px rgba(0, 230, 118, 0.2);
+}
+
+.email-card__sender {
+  font-weight: 600;
+  color: var(--text-primary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+}
+
+.email-card__subject {
+  color: var(--text-secondary);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.88rem;
+}
+
+.email-card__prob {
+  font-family: var(--font-heading);
+  font-size: 0.82rem;
+  text-align: right;
+}
+
+.email-card__prob--spam {
+  color: var(--spam-red);
+}
+
+.email-card__prob--ham {
+  color: var(--ham-green);
+}
+
+.email-card__time {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.4);
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  .email-card {
+    grid-template-columns: 80px 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 0.5rem;
+  }
+  .email-card__prob, .email-card__time {
+    text-align: left;
+  }
+}
